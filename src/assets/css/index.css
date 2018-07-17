@@ -1,0 +1,44 @@
+body {
+    font-family: system, -apple-system, 'Comfortaa', Ubuntu, Cantarell, sans-serif;
+    color: #fff;
+    background: linear-gradient(to bottom left, #00bf8f, #001510);
+    text-align: center;
+    font-size: 45px;
+    transition: all .1s ease-in-out;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#bottom {
+    color: white;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    text-decoration: none;
+    /* cursor: pointer; */
+}
+
+.name {
+  color: white;
+}
+.footer-image {
+  width: 18px;
+  margin-bottom: -3px
+}
+#close {
+  color: white;
+  float: right;
+  padding: 0 8px;
+  cursor: pointer;
+}

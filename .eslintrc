@@ -1,0 +1,7 @@
+{
+    "rules": {
+        "ind"
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"]
+    }
+}
