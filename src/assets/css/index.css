@@ -42,3 +42,6 @@ h2 {
   padding: 0 8px;
   cursor: pointer;
 }
+#wallpaperDetails {
+    font-size: small;
+}

@@ -51,6 +51,7 @@
     "axios": "^0.18.0",
     "electron-compile": "^6.4.3",
     "electron-squirrel-startup": "^1.0.0",
+    "unsplash-js": "^4.8.0",
     "wallpaper-js": "^1.0.6"
   },
   "devDependencies": {
@@ -58,6 +59,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.2.2",
+    "electron-positioner": "^3.0.1",
     "electron-prebuilt-compile": "2.0.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",

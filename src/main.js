@@ -5,10 +5,10 @@ const path = require("path")
 const iconPath = path.join(__dirname, 'assets/icons/tray.png')
 
 let mainWindow
-let appIcon = null;
+let tray = null;
 function createTray() {
-    appIcon = new Tray(iconPath);
-    appIcon.setToolTip("hahaLOL");
+  tray = new Tray(iconPath);
+  tray.setToolTip("Wallie");
   var contextMenu = Menu.buildFromTemplate([
     { label: 'Show App', click:  function(){
         mainWindow.show();
@@ -18,35 +18,33 @@ function createTray() {
         app.quit();
       } }
   ]);
-  appIcon.setContextMenu(contextMenu)
+  tray.setContextMenu(contextMenu)
 
 }
 function createWindow() {
-    mainWindow = new BrowserWindow({width: 800, height: 600, transparent: true, frame: true, title: 'Wallie'})
+    createTray();
+    mainWindow = new BrowserWindow({width: 800, height: 600, transparent: true, frame: false, title: 'Wallie', show: false})
 
-mainWindow.loadURL(`file://${__dirname}/index.html`);
-mainWindow.webContents.on('new-window', function(e, url) {
-e.preventDefault();
-require('electron').shell.openExternal(url);
-});
-app.setLoginItemSettings({ openAtLogin: true });
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.webContents.on('new-window', function(e, url) {
+    e.preventDefault();
+    require('electron').shell.openExternal(url);
+    });
+    app.setLoginItemSettings({ openAtLogin: true });
 
-// mainWindow.webContents.openDevTools()
-createTray()
+    // mainWindow.webContents.openDevTools()
 
-mainWindow.on('closed', function() {
-    mainWindow = null
-  });
+    mainWindow.on('closed', function() {
+        mainWindow = null
+      });
 
 
-mainWindow.on('minimize',function(event){
-    event.preventDefault();
-    mainWindow.hide();
-  });
+    mainWindow.on('minimize',function(event){
+        event.preventDefault();
+        mainWindow.hide();
+      });
 }
 
-var datetime = new Date();
-console.log(datetime);
 
 app.on('ready', createWindow);
 
