@@ -1,5 +1,5 @@
 // Based on the settings loop the server
-
+const {remote} = require('electron');
 
 function minsToMidnight() {
   var now = new Date();
@@ -37,3 +37,25 @@ function randomImage() {
   fetchUnSplashRandom();
 }
 
+var delay = 30000;
+
+var randomTimeout = function startRandomTimer() {
+  var settings = getSettings();
+  console.log('delay',settings);
+  setTimeout(function() {
+    // fetchUnSplashRandom();
+    delay = settings.time;
+
+    startRandomTimer();
+  }, delay);
+}
+
+
+setTimeout(randomTimeout());
+
+
+
+function minimizeWindow () {
+  var window = remote.BrowserWindow.getFocusedWindow();
+  window.hide();
+}

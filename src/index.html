@@ -6,7 +6,12 @@
 <body>
   <span id="close" onclick="minimizeWindow()"> &times</span>
   <h2>Wallie</h2>
-  <span id="info" onclick="fetchUnSplashRandom()"> ClickMe</span>
+   <span id="info" onclick="fetchUnSplashRandom()"> ClickMe</span>
+  <!--<form onsubmit="return submitSettings()">-->
+  <input onkeyup="addTime(this)" type="number" id="time" placeholder="5 Mins" class="time-bar" value="" title="Changes Wallpaper at the specified time in minutes">
+  <input onkeyup="addSearch(this)" type="text" id="search" placeholder="Search for Image Categories" class="search-bar" title="Press enter to add it as a tag">
+  <!--<input type="submit" hidden />-->
+<!--</form>-->
   <span id="bottom">
     Made with <img src="assets/icons/heart.png" class="footer-image"/> by <a href="https://points2008.github.io/" target="_blank" class="name"> Cyrus Jackson</a>
   </span>

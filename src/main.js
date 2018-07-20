@@ -2,7 +2,7 @@ const {app, Tray, Menu, BrowserWindow } = require('electron')
 const AutoLaunch = require('auto-launch');
 // var AutoLaunch = require('auto-launch');
 const path = require("path")
-const iconPath = path.join(__dirname, 'assets/icons/tray.png')
+const iconPath = path.join(__dirname, 'assets/icons/tray2.png')
 
 let mainWindow
 let tray = null;

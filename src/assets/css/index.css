@@ -1,17 +1,19 @@
+html {
+  font-family: system, -apple-system, 'Comfortaa', Ubuntu, Cantarell, sans-serif;
+}
 body {
-    font-family: system, -apple-system, 'Comfortaa', Ubuntu, Cantarell, sans-serif;
     color: #fff;
     background: linear-gradient(to bottom left, #00bf8f, #001510);
     text-align: center;
     font-size: 45px;
     transition: all .1s ease-in-out;
-}
+  }
 
 h2 {
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -44,4 +46,55 @@ h2 {
 }
 #wallpaperDetails {
     font-size: small;
+}
+
+.search-bar {
+
+}
+
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 37%;
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: system, -apple-system, 'Comfortaa', Ubuntu, Cantarell, sans-serif;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../../assets/icons/search.png');
+    /* background-position: 5px 0px; */
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+
+}
+
+.search-bar:focus {
+    width: 90%;
+    left: 5%;
+    -webkit-transition: width 0.4s ease-in;
+    transition: width 0.4s ease-in;
+}
+
+
+.time-bar {
+    width: 118px;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: system, -apple-system, 'Comfortaa', Ubuntu, Cantarell, sans-serif;
+    font-size: 16px;
+    /* background-color: white; */
+    background-image: url('../../assets/icons/time.png');
+    /* background-position: 5px 0px; */
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding: 12px 0 12px 45px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }

@@ -1,4 +1,3 @@
-const {remote} = require('electron');
 const wallpaper = require('wallpaper-js');
 const axios = require('axios');
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -24,8 +23,9 @@ function fetchBingAndChangeWallpaper() {
 
 
 function fetchUnSplashRandom() {
+  var settings = getSettings();
   axios.get('https://api.unsplash.com/photos/random?client_id=ecdc497df6446444d40309a55f43c905fbe73da92c798f6a603e56360138efe5' +
-    '&orientation=landscape&featured=true&query=cyberpunk',{})
+    '&orientation=landscape&query=cyberpunk',{})
     .then((response) => {
       changeWallpaper(response.data.urls.full)
       document.getElementById('info').innerText = response.data.user.username;
@@ -47,8 +47,4 @@ function getArrayString(arr) {
   return str;
 }
 
-function minimizeWindow () {
-  var window = remote.BrowserWindow.getFocusedWindow();
-  window.hide();
-}
 
