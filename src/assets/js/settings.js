@@ -28,7 +28,8 @@ function fetchUnSplashRandom() {
     '&orientation=landscape&query=cyberpunk',{})
     .then((response) => {
       changeWallpaper(response.data.urls.full)
-      document.getElementById('info').innerText = response.data.user.username;
+      var str = 'Clicked By <a href="' + response.data.user.links.html +'" target="_blank" class="name">'+ response.data.user.username +'</a>' + ' On Unsplash';
+      document.getElementById('info').innerHTML = str;
     });
 }
 
@@ -46,5 +47,3 @@ function getArrayString(arr) {
   }
   return str;
 }
-
-
