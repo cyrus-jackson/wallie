@@ -23,7 +23,7 @@ function changeWallpaper(sourceUrl) {
 
   download(sourceUrl, 'wallpapers/wall.jpg', function(){
     console.log('download done');
-    wallpapernew.set('wallpapers/wall.jpg').then(() => {
+    wallpaper.set('wallpapers/wall.jpg').then(() => {
     	console.log('wallpaper set');
     });
   });
