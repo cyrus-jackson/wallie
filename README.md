@@ -5,4 +5,4 @@
 
 
 # Contributors 
-    [Aliasgar](https://github.com/aliasgarlabs)
+[Aliasgar](https://github.com/aliasgarlabs)
