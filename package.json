@@ -52,6 +52,7 @@
     "electron-compile": "^6.4.3",
     "electron-squirrel-startup": "^1.0.0",
     "unsplash-js": "^4.8.0",
+    "wallpaper": "^3.0.0",
     "wallpaper-js": "^1.0.6"
   },
   "devDependencies": {

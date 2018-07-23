@@ -49,15 +49,17 @@ function addTime(ele) {
   setSettings(settings);
 }
 function addSearch(ele) {
-  if(event.key === 'Enter') {
-    alert(ele.value);
-  }
+  var search = document.getElementById('search').value;
+    settings.categories = search;
+    setSettings(settings);
+    console.log('settings ',settings)
 }
 
 
 function init() {
   getSettings();
   document.getElementById('time').value = settings.time/6000;
+  document.getElementById('search').value = settings.categories;
 }
 
 

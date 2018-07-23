@@ -1,5 +1,8 @@
 const axios = require('axios');
 const wallpaper= require('wallpaper');
+const wallpaperJs = require('wallpaper-js');
+
+var os = require('os');
 
 var fs = require('fs'),
     request = require('request');
@@ -21,11 +24,12 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 function changeWallpaper(sourceUrl) {
   let options = { source : sourceUrl}
 
-  download(sourceUrl, 'wallpapers/wall.jpg', function(){
-    console.log('download done');
-    wallpaper.set('wallpapers/wall.jpg').then(() => {
-    	console.log('wallpaper set');
-    });
+  if(os.type() == 'Linux')
+    wallpaperJs.set(options);
+  else
+    download(sourceUrl, 'src/wallpapers/.jpg', function(){
+      wallpaper.set('src/wallpapers/wall.jpg').then(() => {
+      });
   });
 }
 
@@ -45,7 +49,7 @@ function fetchBingAndChangeWallpaper() {
 function fetchUnSplashRandom() {
   var settings = getSettings();
   axios.get('https://api.unsplash.com/photos/random?client_id=ecdc497df6446444d40309a55f43c905fbe73da92c798f6a603e56360138efe5' +
-    '&orientation=landscape&query=cyberpunk',{})
+    '&orientation=landscape&query='+settings.categories,{})
     .then((response) => {
       changeWallpaper(response.data.urls.full)
       var str = 'Clicked By <a href="' + response.data.user.links.html +'" target="_blank" class="name">'+ response.data.user.username +'</a>' + ' On Unsplash';

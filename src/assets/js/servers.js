@@ -32,18 +32,13 @@ function startTimer() {
 // startTimer();
 
 
-var myVar = setInterval(randomImage,300000);
-function randomImage() {
-  fetchUnSplashRandom();
-}
 
 var delay = 30000;
 
 var randomTimeout = function startRandomTimer() {
   var settings = getSettings();
-  console.log('delay',settings);
   setTimeout(function() {
-    // fetchUnSplashRandom();
+    fetchUnSplashRandom();
     delay = settings.time;
 
     startRandomTimer();
