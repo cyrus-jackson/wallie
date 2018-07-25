@@ -31,7 +31,7 @@ function getBingDetails() {
 }
 
 
-var myVar = setInterval(randomTextColorChange,10000);
+var myVar = setInterval(randomTextColorChange,15000);
 var colorCount = 0;
 var backgroundCount = 0;
 function randomTextColorChange() {
@@ -45,7 +45,11 @@ function randomTextColorChange() {
 
 function addTime(ele) {
   var time = document.getElementById('time').value;
-  settings.time = time * 6000;
+  if(time < 5) {
+    time = 5;
+    document.getElementById('time').value = 5;
+  }
+  settings.time = time * 60000;
   setSettings(settings);
 }
 function addSearch(ele) {

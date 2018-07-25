@@ -59,6 +59,21 @@ h2 {
   text-decoration: none;
 }
 
+.next {
+  position: absolute;
+  top: 67%;
+  left: 45%;
+  width: 13%;
+  transition: transform 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.next:hover{
+  transform: rotate(360deg);
+  transition: transform 0.7s ease-in-out;
+}
+
+
 .search-bar {
 
 }

@@ -10,7 +10,7 @@ function createTray() {
   tray = new Tray(iconPath);
   tray.setToolTip("Wallie");
   var contextMenu = Menu.buildFromTemplate([
-    { label: 'Show App', click:  function(){
+    { label: 'Open', click:  function(){
         mainWindow.show();
       } },
     { label: 'Quit', click:  function(){

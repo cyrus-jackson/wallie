@@ -6,9 +6,10 @@
 <body>
   <span id="close" onclick="minimizeWindow()"> &times</span>
   <h2>Wallie</h2>
-   <div id="info" onclick="fetchUnSplashRandom()"> ClickMe</div>
+   <div id="info"> Photographer Info </div>
+   <img class="next" src="assets/icons/next1.png" onclick="fetchUnSplashRandom()" title="Set Random Wallpaper"/>
   <!--<form onsubmit="return submitSettings()">-->
-  <input onkeyup="addTime(this)" type="number" id="time" placeholder="5 Mins" class="time-bar" value="" min="5" title="Changes Wallpaper at the specified time in minutes">
+  <input onkeyup="addTime(this)" type="text" id="time" placeholder="5 Mins" class="time-bar" value="" min="5" title="Changes Wallpaper at the specified time in minutes">
   <input onkeyup="addSearch(this)" type="text" id="search" placeholder="Image Tags" class="search-bar" title="Press enter to add it as a tag">
   <!--<input type="submit" hidden />-->
 <!--</form>-->

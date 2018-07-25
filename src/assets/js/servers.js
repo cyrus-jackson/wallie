@@ -33,20 +33,28 @@ function startTimer() {
 
 
 
-var delay = 30000;
+// var delay = 30000;
+//
+// var randomTimeout = function startRandomTimer() {
+//   var settings = getSettings();
+//   setTimeout(function() {
+//
+//
+//     startRandomTimer();
+//   }, delay);
+// }
 
-var randomTimeout = function startRandomTimer() {
-  var settings = getSettings();
-  setTimeout(function() {
-    fetchUnSplashRandom();
-    delay = settings.time;
+let delay = 5000;
 
-    startRandomTimer();
-  }, delay);
-}
+let timerId = setTimeout(function request() {
+  fetchUnSplashRandom();
+  delay = settings.time;
+  console.log('hehehe' , delay)
+  timerId = setTimeout(request, delay);
+
+}, delay);
 
 
-setTimeout(randomTimeout());
 
 
 
