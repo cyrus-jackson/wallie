@@ -23,7 +23,8 @@ function createTray() {
 }
 function createWindow() {
     createTray();
-    mainWindow = new BrowserWindow({width: 800, height: 600, transparent: true, frame: false, title: 'Wallie', show: false})
+    mainWindow = new BrowserWindow({width: 800, height: 600, transparent: true, frame: false, title: 'Wallie', show: false,
+      icon: __dirname + '/assets/icons/tray2.png'})
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);
     mainWindow.webContents.on('new-window', function(e, url) {

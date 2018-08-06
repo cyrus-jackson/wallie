@@ -56,7 +56,7 @@ function fetchUnSplashRandom() {
       document.getElementById('info').innerHTML = str;
     });
 }
-
+  
 
 
 
