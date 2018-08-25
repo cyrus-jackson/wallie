@@ -31,14 +31,14 @@ function changeWallpaper(sourceUrl) {
     var d = new Date();
     var t = d.getTime();
 
-        download(sourceUrl, 'wall'+t+ '.jpg', function(){
+        download(sourceUrl, 'src/wallpapers/wall'+t+ '.jpg', function(){
           console.log("Download complete");
-      wallpaper.set('wall'+t+ '.jpg').then(() => {
+      wallpaper.set('src/wallpapers/wall'+t+ '.jpg').then(() => {
         console.log("Wallpaper is set");
       });
   });
+  }
 }
-
 
 function fetchBingAndChangeWallpaper() {
   axios.post('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1', {})

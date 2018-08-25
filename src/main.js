@@ -7,10 +7,33 @@ const iconPath = path.join(__dirname, 'assets/icons/tray2.png')
 let mainWindow
 let tray = null;
 function createTray() {
-  tray = new Tray(iconPath);
+
+var platform = require('os').platform();  
+var imageFolder = __dirname + '/assets/icons';
+var trayImage = "";
+
+// Determine appropriate icon for platform
+if (platform == 'darwin') {  
+    trayImage = imageFolder + '/icon_osx.png';
+}
+else if (platform == 'win32') {  
+    trayImage = imageFolder + '/tray2.png';
+}
+else {
+  //Linux
+  trayImage = imageFolder + '/tray2.png';
+}
+
+
+tray = new Tray(trayImage);
+
+// if (platform == "darwin") {  
+//     tray.setPressedImage(imageFolder + '/icon_macos.png');
+// }
+
   tray.setToolTip("Wallie");
   var contextMenu = Menu.buildFromTemplate([
-    { label: 'Open', click:  function(){
+    { label: 'Launch', click:  function(){
         mainWindow.show();
       } },
     { label: 'Quit', click:  function(){
