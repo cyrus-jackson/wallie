@@ -26,9 +26,15 @@ function changeWallpaper(sourceUrl) {
 
   if(os.type() == 'Linux')
     wallpaperJs.set(options);
-  else
-    download(sourceUrl, 'src/wallpapers/.jpg', function(){
-      wallpaper.set('src/wallpapers/wall.jpg').then(() => {
+  else {
+
+    var d = new Date();
+    var t = d.getTime();
+
+        download(sourceUrl, 'wall'+t+ '.jpg', function(){
+          console.log("Download complete");
+      wallpaper.set('wall'+t+ '.jpg').then(() => {
+        console.log("Wallpaper is set");
       });
   });
 }
